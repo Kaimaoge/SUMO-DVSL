@@ -9,3 +9,8 @@ floating_car.sumo.cfg --- The SUMO simulation configuration
 map.net.xml --- The transportation freeway networks - An 875.51 m, on- and off-ramp inclusive, northbound freeway section of I405 in California, USA. The map is downloaded from openstreetmap, and processed by netedit of SUMO.
 
 ![The road map](https://github.com/Kaimaoge/SUMO-DVSL/blob/master/osmnew.png)
+
+ns.det.xml --- This is the detectors used to collect traffic state and parts of reward signals.
+
+![The detectors 1](https://github.com/Kaimaoge/SUMO-DVSL/blob/master/state_action-min(1).jpg)
+![The detectors 2](https://github.com/Kaimaoge/SUMO-DVSL/blob/master/downstream-mina.jpg)
