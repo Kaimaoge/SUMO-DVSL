@@ -14,3 +14,41 @@ ns.det.xml --- This is the detectors used to collect traffic state and parts of 
 
 ![The detectors 1](https://github.com/Kaimaoge/SUMO-DVSL/blob/master/state_action-min(1).jpg)
 ![The detectors 2](https://github.com/Kaimaoge/SUMO-DVSL/blob/master/downstream-mina.jpg)
+
+output_sumo.xml --- The output information of the simulation.
+
+networks0.py --- The python script for running the code, it provides a interface with the reinforcement learning agent.
+
+## Python script explanation
+
+The demand is defined by OD matrix. The simulation lasts for 5 hours, each hours' demand of each route are modeled as Poisson distribution. The mean of the Poisson distribution is given in defined in the script.
+
+We use two types of vehicles with different length, and the vehicle is randomly set with two types of car following behavior.
+
+The desire of the vehicle to driving under speed limits is defined as a normal distribution using speedFactor="normc(1,0.1,0.2,2)，the tendency to perform lane change to gain speed is defined as lcSpeedGain = "1".
+
+If incidents = True, a random incident will happen. This is done by set vehicle speed to 0 during a period of simulation.
+
+get_step_state() --- a function used to collect occupancy rate of state detectors. It provides the state variable for RL agent.
+
+set_vsl(v) --- set the speed limits for different lanes.
+
+calc_outflow() --- calculate the difference between outflow and inflow.
+
+calc_bottlespeed() --- calculate the bottleneck speed by the detector located in the merge area.
+
+calc_emission() --- calculate the pollution air emission of the transportation system.
+
+start_new_simulation() --- start a new simulation.
+
+run_step() --- run one step with the set speed limits. This function will output the simulationstep, state, reward variables and emissiong in one step.
+
+close() --- it will closes the simulation
+
+## future function
+Currently it only uses occupancy rate collected from loop detectors as state variable, in the future I will try to simulate floating car state as state variable.
+
+Many different kinds of rewards can be used.
+
+Training RL agent on more stochastic environment will be a future direction.
+
