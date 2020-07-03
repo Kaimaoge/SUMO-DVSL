@@ -57,7 +57,7 @@ If incidents = True, a random incident will happen. This is done by set vehicle 
 
 The agent is based on an actor-critic framework. In this version, we didn't use the exploration in order to make the agent converges.
 
-![The Actor-critic framework](https://github.com/Kaimaoge/SUMO-DVSL/blob/master/archi.jpg)
+<div align="center"><img height="300" src="https://github.com/Kaimaoge/SUMO-DVSL/blob/master/archi.jpg"/></div>
 
 
 
